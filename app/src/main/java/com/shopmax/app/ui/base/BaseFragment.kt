@@ -1,4 +1,4 @@
-package com.shopmax.ui.base
+package com.shopmax.app.ui.base
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,7 +8,9 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewbinding.ViewBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 abstract class BaseFragment<B: ViewBinding, VM: ViewModel> : Fragment() {
 
     protected lateinit var viewModel: VM

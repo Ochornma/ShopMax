@@ -1,9 +1,9 @@
-package com.shopmax.ui.home
+package com.shopmax.app.ui.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.shopmax.app.databinding.HomeFragmentBinding
-import com.shopmax.ui.base.BaseFragment
+import com.shopmax.app.ui.base.BaseFragment
 
 class HomeFragment : BaseFragment<HomeFragmentBinding, HomeViewModel>() {
 

@@ -1,4 +1,4 @@
-package com.shopmax.ui.home
+package com.shopmax.app.ui.home
 
 import androidx.lifecycle.ViewModel
 
