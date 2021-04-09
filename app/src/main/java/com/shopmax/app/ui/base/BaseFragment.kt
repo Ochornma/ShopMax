@@ -10,7 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.viewbinding.ViewBinding
 import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
+
 abstract class BaseFragment<B: ViewBinding, VM: ViewModel> : Fragment() {
 
     protected lateinit var viewModel: VM

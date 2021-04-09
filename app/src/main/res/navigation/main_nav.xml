@@ -9,5 +9,30 @@
         android:id="@+id/homeFragment"
         android:name="com.shopmax.app.ui.home.HomeFragment"
         android:label="HomeFragment"
-        tools:layout="@layout/home_fragment"/>
+        tools:layout="@layout/home_fragment">
+        <action
+            android:id="@+id/action_homeFragment_to_getQuoteFragment"
+            app:destination="@id/getQuoteFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_trackOrderFragment"
+            app:destination="@id/trackOrderFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_placeOrderFragment"
+            app:destination="@id/placeOrderFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/getQuoteFragment"
+        android:name="com.shopmax.app.ui.quote.GetQuoteFragment"
+        android:label="get_quote_fragment"
+        tools:layout="@layout/get_quote_fragment" />
+    <fragment
+        android:id="@+id/placeOrderFragment"
+        android:name="com.shopmax.app.ui.order.PlaceOrderFragment"
+        android:label="place_order_fragment"
+        tools:layout="@layout/place_order_fragment" />
+    <fragment
+        android:id="@+id/trackOrderFragment"
+        android:name="com.shopmax.app.ui.track.TrackOrderFragment"
+        android:label="track_order_fragment"
+        tools:layout="@layout/track_order_fragment" />
 </navigation>
