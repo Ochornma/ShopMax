@@ -1,11 +1,14 @@
 package com.shopmax.app.network.model.getquoteresponse
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class PickupCapabilities(
     val pickup_additional_days: Int,
     val pickup_day_of_week: Int,
     val pickup_earliest: String,
     val pickup_latest: String
-){
+): Parcelable {
     val day: String = pickup_day_of_week.toString()
         get() = dayOfWeek(field)
 

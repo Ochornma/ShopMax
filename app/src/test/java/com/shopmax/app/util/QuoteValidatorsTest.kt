@@ -11,7 +11,7 @@ class QuoteValidatorsTest {
      val exception: Throwable = assertThrows(ShopException::class.java){
           QuoteValidators.validateData(" ", "jj", "kk", "ll", "kk", true)
      }
-     assertEquals("Enter Receiver's Name", exception.message)
+     assertEquals("Enter Delivery City Name", exception.message)
  }
 
     @Test
@@ -19,7 +19,7 @@ class QuoteValidatorsTest {
         val exception: Throwable = assertThrows(ShopException::class.java){
             QuoteValidators.validateData("hh", " ", "kk", "ll", "kk", true)
         }
-        assertEquals("Enter Receiver's Address", exception.message)
+        assertEquals("Enter Delivery Address", exception.message)
     }
     @Test
     fun `test if ship date is empty`(){
@@ -33,14 +33,14 @@ class QuoteValidatorsTest {
         val exception: Throwable = assertThrows(ShopException::class.java){
            QuoteValidators.validateData("ff", "jj", " ", "ll", "kk", true)
         }
-        assertEquals("Enter Pickup Recipient's Name", exception.message)
+        assertEquals("Enter Pickup City Name", exception.message)
     }
     @Test
     fun `test if picker address is empty`(){
         val exception: Throwable = assertThrows(ShopException::class.java){
             QuoteValidators.validateData("ff", "jj", "kk", " ", "kk", true)
         }
-        assertEquals("Enter Pickup Recipient's Address", exception.message)
+        assertEquals("Enter Pickup City Address", exception.message)
     }
 
 

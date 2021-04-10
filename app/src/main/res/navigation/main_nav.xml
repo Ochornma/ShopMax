@@ -46,7 +46,9 @@
         tools:layout="@layout/package_fragment" >
         <action
             android:id="@+id/action_packageFragment_to_quoteFragment"
-            app:destination="@id/quoteFragment" />
+            app:destination="@id/quoteFragment"
+            app:popUpTo="@id/getQuoteFragment"
+            app:popUpToInclusive="true" />
         <argument
             android:name="reciever"
             app:argType="com.shopmax.app.network.model.getquote.ReceiverDetails" />
@@ -66,5 +68,9 @@
         android:id="@+id/quoteFragment"
         android:name="com.shopmax.app.ui.quote.QuoteFragment"
         android:label="quote_fragment"
-        tools:layout="@layout/quote_fragment" />
+        tools:layout="@layout/quote_fragment" >
+        <argument
+            android:name="quote"
+            app:argType="com.shopmax.app.network.model.getquoteresponse.GetQuoteResponse" />
+    </fragment>
 </navigation>

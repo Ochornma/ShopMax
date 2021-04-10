@@ -3,16 +3,20 @@ package com.shopmax.app.network.model.getquoteresponse
 import android.icu.text.SimpleDateFormat
 import android.icu.util.TimeZone
 import android.os.Build
+import android.os.Parcelable
 import androidx.annotation.RequiresApi
 import java.text.ParseException
 import java.util.*
 
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class DeliveryCapabilities(
     val delivery_additional_days: Int,
     val delivery_day_of_week: Int,
     val estimated_delivery_date_and_time: String,
     val total_transit_days: Int
-){
+): Parcelable {
 
     val day: String = delivery_day_of_week.toString()
         get() = dayOfWeek(field)

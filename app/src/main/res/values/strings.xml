@@ -16,8 +16,8 @@
     <string name="package_lenght">Lenght</string>
     <string name="package_width">Width</string>
     <string name="package_height">Height</string>
-    <string name="remove_package">Remove Package</string>
-    <string name="edit_package">Edit Package</string>
+    <string name="remove_package">Remove</string>
+    <string name="edit_package">Edit</string>
     <string name="add_packages">Add Packages</string>
     <string name="x">X</string>
     <string name="add_package">Add Package</string>

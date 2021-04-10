@@ -6,27 +6,31 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.navArgs
 import com.shopmax.app.R
+import com.shopmax.app.databinding.QuoteFragmentBinding
+import com.shopmax.app.ui.base.BaseFragment
+import dagger.hilt.android.AndroidEntryPoint
 
-class QuoteFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = QuoteFragment()
+class QuoteFragment : BaseFragment<QuoteFragmentBinding, QuoteViewModel>() {
+
+    override fun getViewModel(): Class<QuoteViewModel> {
+        return QuoteViewModel::class.java
     }
 
-    private lateinit var viewModel: QuoteViewModel
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.quote_fragment, container, false)
+    override fun getFragmentBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ): QuoteFragmentBinding {
+        return QuoteFragmentBinding.inflate(inflater, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(QuoteViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun setUpViews() {
+        super.setUpViews()
+        val args: QuoteFragmentArgs by navArgs()
+        val response = args.quote
+        binding.response = response
     }
 
 }

@@ -9,5 +9,5 @@ import retrofit2.Response
 interface Api {
 
     @POST("auth/login")
-    suspend fun login(@Body request: GetQuoteRequest): Response<GetQuoteResponse>
+    suspend fun quote(@Body request: GetQuoteRequest): Response<GetQuoteResponse>
 }
