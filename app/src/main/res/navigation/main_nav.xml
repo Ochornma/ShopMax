@@ -24,7 +24,11 @@
         android:id="@+id/getQuoteFragment"
         android:name="com.shopmax.app.ui.quote.GetQuoteFragment"
         android:label="get_quote_fragment"
-        tools:layout="@layout/get_quote_fragment" />
+        tools:layout="@layout/get_quote_fragment" >
+        <action
+            android:id="@+id/action_getQuoteFragment_to_packageFragment"
+            app:destination="@id/packageFragment" />
+    </fragment>
     <fragment
         android:id="@+id/placeOrderFragment"
         android:name="com.shopmax.app.ui.order.PlaceOrderFragment"
@@ -35,4 +39,32 @@
         android:name="com.shopmax.app.ui.track.TrackOrderFragment"
         android:label="track_order_fragment"
         tools:layout="@layout/track_order_fragment" />
+    <fragment
+        android:id="@+id/packageFragment"
+        android:name="com.shopmax.app.ui.quote.PackageFragment"
+        android:label="package_fragment"
+        tools:layout="@layout/package_fragment" >
+        <action
+            android:id="@+id/action_packageFragment_to_quoteFragment"
+            app:destination="@id/quoteFragment" />
+        <argument
+            android:name="reciever"
+            app:argType="com.shopmax.app.network.model.getquote.ReceiverDetails" />
+        <argument
+            android:name="pickup"
+            app:argType="com.shopmax.app.network.model.getquote.PickupDetails" />
+        <argument
+            android:name="pickuprequest"
+            app:argType="boolean"
+            android:defaultValue="false" />
+        <argument
+            android:name="shippingdate"
+            app:argType="string"
+            android:defaultValue="DD/MM/YYYY" />
+    </fragment>
+    <fragment
+        android:id="@+id/quoteFragment"
+        android:name="com.shopmax.app.ui.quote.QuoteFragment"
+        android:label="quote_fragment"
+        tools:layout="@layout/quote_fragment" />
 </navigation>

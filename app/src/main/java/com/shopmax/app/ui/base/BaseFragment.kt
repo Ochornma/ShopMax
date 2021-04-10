@@ -8,17 +8,22 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewbinding.ViewBinding
-import dagger.hilt.android.AndroidEntryPoint
 
 
-abstract class BaseFragment<B: ViewBinding, VM: ViewModel> : Fragment() {
+abstract class BaseFragment<B : ViewBinding, VM : ViewModel> : Fragment() {
 
     protected lateinit var viewModel: VM
     protected lateinit var binding: B
-    open fun setUpViews() {}
+    open fun setUpViews() {
+
+    }
 
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         binding = getFragmentBinding(inflater, container)
         viewModel = ViewModelProvider(this).get(getViewModel())
         return binding.root
